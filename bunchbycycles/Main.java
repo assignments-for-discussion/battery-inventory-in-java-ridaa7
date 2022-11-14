@@ -9,6 +9,21 @@ public class Main {
 
   static CountsByUsage countBatteriesByUsage(int[] cycles) {
     CountsByUsage counts = new CountsByUsage();
+    for(int i=0;i<cycles.length;i++)//for loop
+    {
+      if cycles[i]<410 //checking if the charge cycles is less than 410
+      {
+       counts.lowcount++;
+      }
+      else if(cycles[i]>410&&cycles[i]<950)//checking if it is greater than 410 and less than 950
+      {
+        counts.mediumcount++;
+      }
+      else cycles[i]>=950//checking if greater than or equal to 950
+      {
+        counts.highcount++;
+      }
+    
     return counts;
   }
 
